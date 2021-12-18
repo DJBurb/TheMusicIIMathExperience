@@ -1,0 +1,60 @@
+.number{
+  text-align: center;
+  font-size: 4em;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+}
+
+@keyframes zoomIn {
+  0% {font-size: 0em;}
+  100% {font-size: 4em;}
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.answers{
+  text-align: center;
+  margin-top: 5%;
+
+  div{
+    background-color: green;
+    font-size: 4em;
+    width: 73%;
+    margin-bottom: 10%;
+  }
+}
+
+.answerGrid{
+  margin-left: 10%;
+}
+
+.inventoryArea{
+  background-color: bisque;
+  height: 12em;
+  margin-bottom: 8%;
+}
+
+
+
+
+.emotionCard{
+  height: 4.1em;
+  text-align: center;
+  font-size: 2em;
+  div{
+    padding-top: 11%;
+  }
+}
+
+
+
+.failCard{
+  background-color: red;
+}
+.praiseCard{
+  background-color: green;
+}
+

@@ -1,0 +1,7 @@
+{
+  "name": "TheMusicIIMathExperience",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
