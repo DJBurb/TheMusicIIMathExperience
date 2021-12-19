@@ -58,7 +58,7 @@ export class AdditionPage implements OnInit {
           this.currentProblem=this.problemNumbers[this.currentProblemIndex];
           this.showPraiseCard=false;
         }
-      }, 2000)
+      }, 2000);
     }
   }
 

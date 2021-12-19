@@ -8,7 +8,7 @@ import { AdditionPageRoutingModule } from './addition-routing.module';
 
 import { AdditionPage } from './addition.page';
 import { EmotionCardModule } from '../../helperComponents/emotion-card/emotion-card.module';
-import { EmotionCardComponent } from '../../helperComponents/emotion-card/emotion-card.component';
+import { AnswerChoicesModule } from '../../helperComponents/answer-choices/answer-choices.module';
 
 @NgModule({
   imports: [
@@ -16,7 +16,8 @@ import { EmotionCardComponent } from '../../helperComponents/emotion-card/emotio
     FormsModule,
     IonicModule,
     AdditionPageRoutingModule,
-    EmotionCardModule
+    EmotionCardModule,
+    AnswerChoicesModule
   ],
   declarations: [AdditionPage]
 })

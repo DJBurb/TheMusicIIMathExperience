@@ -16,44 +16,14 @@
   <div class="number" [hidden]="!answerIsCorrect">
     {{currentProblem?.firstNumber}} + {{currentProblem?.secondNumber}} = {{currentProblem.answer}}
   </div>
-  <div class="answers">
-    <ion-grid class="answerGrid">
-      <ion-row>
-        <ion-col>
-          <div (click)="checkAnswer(currentProblem?.possibleAnswers[0])">
-            {{currentProblem?.possibleAnswers[0]}}
-          </div>
-        </ion-col>
-        <ion-col>
-          <div (click)="checkAnswer(currentProblem?.possibleAnswers[1])">
-            {{currentProblem?.possibleAnswers[1]}}
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-           <div (click)="checkAnswer(currentProblem?.possibleAnswers[2])">
-            {{currentProblem?.possibleAnswers[2]}}
-           </div>
-        </ion-col>
-        <ion-col>
-           <div (click)="checkAnswer(currentProblem?.possibleAnswers[3])">
-            {{currentProblem?.possibleAnswers[3]}}
-           </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
 
-  </div>
-  <!-- <div class="emotionCard {{answerIsCorrect?'praiseCard':'failCard'}}" *ngIf="showPraiseCard">
-     <div *ngIf="answerIsCorrect">
-       Correct!!!!
-     </div>
-     <div *ngIf="!answerIsCorrect">
-      Incorrect
-    </div>
-  </div> -->
+  <answer-choices [answerChoice1]="currentProblem?.possibleAnswers[0]"
+  [answerChoice2]="currentProblem?.possibleAnswers[1]"
+  [answerChoice3]="currentProblem?.possibleAnswers[2]"
+  [answerChoice4]="currentProblem?.possibleAnswers[3]" (emitChoiceEvent)="checkAnswer($event)">
+
+  </answer-choices>
+
   <emotion-card [show]="showPraiseCard" [answerIsCorrect]= "answerIsCorrect">
-
   </emotion-card>
 </ion-content>
