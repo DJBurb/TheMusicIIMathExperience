@@ -45,12 +45,15 @@
     </ion-grid>
 
   </div>
-  <div class="emotionCard {{answerIsCorrect?'praiseCard':'failCard'}}" *ngIf="showPraiseCard">
+  <!-- <div class="emotionCard {{answerIsCorrect?'praiseCard':'failCard'}}" *ngIf="showPraiseCard">
      <div *ngIf="answerIsCorrect">
        Correct!!!!
      </div>
      <div *ngIf="!answerIsCorrect">
       Incorrect
     </div>
-  </div>
+  </div> -->
+  <emotion-card [show]="showPraiseCard" [answerIsCorrect]= "answerIsCorrect">
+
+  </emotion-card>
 </ion-content>

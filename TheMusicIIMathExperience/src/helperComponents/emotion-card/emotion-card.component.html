@@ -1,0 +1,8 @@
+<div class="emotionCard {{answerIsCorrect?'praiseCard':'failCard'}}" *ngIf="show">
+  <div *ngIf="answerIsCorrect">
+    Correct!!!!
+  </div>
+  <div *ngIf="!answerIsCorrect">
+   Incorrect
+ </div>
+</div>
