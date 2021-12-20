@@ -9,13 +9,10 @@
   <div class="inventoryArea">
 
   </div>
+  <problem-display [firstNumber]="currentProblem?.firstNumber"  [secondNumber]="currentProblem?.secondNumber"
+  [showAnswer]="answerIsCorrect? false: true" [problemType]="problemType" [answer]="currentProblem.answer">
 
-  <div class="number zoomIn" [hidden]="answerIsCorrect">
-    {{currentProblem?.firstNumber}} + {{currentProblem?.secondNumber}} = ?
-  </div>
-  <div class="number" [hidden]="!answerIsCorrect">
-    {{currentProblem?.firstNumber}} + {{currentProblem?.secondNumber}} = {{currentProblem.answer}}
-  </div>
+  </problem-display>
 
   <answer-choices [answerChoice1]="currentProblem?.possibleAnswers[0]"
   [answerChoice2]="currentProblem?.possibleAnswers[1]"

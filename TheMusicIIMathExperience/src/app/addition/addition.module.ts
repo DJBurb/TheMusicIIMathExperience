@@ -9,6 +9,7 @@ import { AdditionPageRoutingModule } from './addition-routing.module';
 import { AdditionPage } from './addition.page';
 import { EmotionCardModule } from '../../helperComponents/emotion-card/emotion-card.module';
 import { AnswerChoicesModule } from '../../helperComponents/answer-choices/answer-choices.module';
+import { ProblemDisplayModule } from '../../helperComponents/problem-display/problem-display.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { AnswerChoicesModule } from '../../helperComponents/answer-choices/answe
     IonicModule,
     AdditionPageRoutingModule,
     EmotionCardModule,
-    AnswerChoicesModule
+    AnswerChoicesModule,
+    ProblemDisplayModule
   ],
   declarations: [AdditionPage]
 })

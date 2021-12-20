@@ -17,10 +17,12 @@ export class AdditionPage implements OnInit {
   currentProblem: Problem;
   showPraiseCard: boolean;
   currentProblemIndex: number;
+  problemType: ProblemType;
 
   constructor(private problemGeneratorService:ProblemGeneratorService) { }
 
   ngOnInit() {
+    this.problemType= ProblemType.Addition;
     for(let i=0; i<=9; i++){
       const problemNumber= this.problemGeneratorService.generate(0,10,0,10, ProblemType.Addition);
       this.problemNumbers.push(problemNumber);

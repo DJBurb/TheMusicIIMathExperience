@@ -1,0 +1,7 @@
+
+  <div class="number zoomIn" [hidden]="!showAnswer">
+    {{firstNumber}} {{mathSymbol}} {{secondNumber}} = ?
+  </div>
+  <div class="number" [hidden]="showAnswer">
+    {{firstNumber}} {{mathSymbol}} {{secondNumber}} = {{answer}}
+  </div>
