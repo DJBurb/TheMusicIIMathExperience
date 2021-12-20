@@ -25,7 +25,7 @@ export class ProblemGeneratorService {
         if(secondNumber>firstNumber){
           const temp= firstNumber;
           firstNumber = secondNumber;
-          secondNumber=firstNumber;
+          secondNumber=temp;
         }
         answer = firstNumber-secondNumber;
         possibleAnswers.push(answer);
@@ -46,4 +46,8 @@ export class ProblemGeneratorService {
         possibleAnswers:possibleAnswers
       }
     }
+
+  getNumberOfProblemsToSolve():number{
+    return 10;
+  }
 }

@@ -23,7 +23,7 @@ export class SubtractionPage implements OnInit {
 
   ngOnInit() {
     this.problemType= ProblemType.Subtraction;
-    for(let i=0; i<=9; i++){
+    for(let i=0; i<=this.problemGeneratorService.getNumberOfProblemsToSolve()-1; i++){
       const problemNumber= this.problemGeneratorService.generate(0,10,0,10, this.problemType);
       this.problemNumbers.push(problemNumber);
 
@@ -33,7 +33,6 @@ export class SubtractionPage implements OnInit {
         this.answerIsCorrect = false;
       }
     }
-     console.log(this.problemNumbers);
   }
 
   checkAnswer(chosenAnswer: number){
