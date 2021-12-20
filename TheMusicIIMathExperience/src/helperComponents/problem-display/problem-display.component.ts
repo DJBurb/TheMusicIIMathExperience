@@ -24,6 +24,9 @@ export class ProblemDisplayComponent implements OnInit {
     if(this.problemType === ProblemType.Subtraction){
       this.mathSymbol="-";
     }
+    if(this.problemType === ProblemType.Multiplication){
+      this.mathSymbol="x";
+    }
   }
 
 }

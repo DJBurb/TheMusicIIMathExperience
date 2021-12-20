@@ -30,6 +30,10 @@ export class ProblemGeneratorService {
         answer = firstNumber-secondNumber;
         possibleAnswers.push(answer);
       }
+      else if(problemType === ProblemType.Multiplication){
+        answer = firstNumber*secondNumber;
+        possibleAnswers.push(answer);
+      }
 
       for(let i=0; i<3; i++){
         let randomPossibleAnswer=0

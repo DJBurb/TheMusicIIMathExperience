@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Multiplication</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="inventoryArea">
+
+  </div>
+  <problem-solver
+  [firstNumber]="currentProblem?.firstNumber"
+  [secondNumber]="currentProblem?.secondNumber"
+  [showAnswer]="answerIsCorrect? false: true"
+  [problemType]="problemType"
+  [answer]="currentProblem.answer"
+  [possibleAnswer1]="currentProblem?.possibleAnswers[0]"
+  [possibleAnswer2]="currentProblem?.possibleAnswers[1]"
+  [possibleAnswer3]="currentProblem?.possibleAnswers[2]"
+  [possibleAnswer4]="currentProblem?.possibleAnswers[3]"
+  [showPraiseCard]="showPraiseCard"
+  [answerIsCorrect]= "answerIsCorrect"
+  (emitChoiceEvent)="checkAnswer($event)">
+
+  </problem-solver>
+</ion-content>

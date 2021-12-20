@@ -19,9 +19,6 @@ import { ProblemSolverModule } from '../../helperComponents/problem-solver/probl
     IonicModule,
     AdditionPageRoutingModule,
     ProblemSolverModule
-    // EmotionCardModule,
-    // AnswerChoicesModule,
-    // ProblemDisplayModule
   ],
   declarations: [AdditionPage]
 })
