@@ -13,12 +13,21 @@ export class ProblemGeneratorService {
   generate(firstNumberMin: number, firstNumberMax: number,
     secondNumberMin: number, secondNumberMax: number, problemType:ProblemType):Problem{
       let possibleAnswers = [];
-      const firstNumber = Math.floor(Math.random() * (firstNumberMax - firstNumberMin + 1)) + firstNumberMin;
-      const secondNumber = Math.floor(Math.random() * (secondNumberMax - secondNumberMin + 1)) + secondNumberMin;
+      let firstNumber = Math.floor(Math.random() * (firstNumberMax - firstNumberMin + 1)) + firstNumberMin;
+      let secondNumber = Math.floor(Math.random() * (secondNumberMax - secondNumberMin + 1)) + secondNumberMin;
 
       let answer =0;
       if(problemType === ProblemType.Addition){
         answer = firstNumber+secondNumber;
+        possibleAnswers.push(answer);
+      }
+      else if(problemType === ProblemType.Subtraction){
+        if(secondNumber>firstNumber){
+          const temp= firstNumber;
+          firstNumber = secondNumber;
+          secondNumber=firstNumber;
+        }
+        answer = firstNumber-secondNumber;
         possibleAnswers.push(answer);
       }
 

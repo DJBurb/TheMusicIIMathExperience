@@ -24,7 +24,7 @@ export class AdditionPage implements OnInit {
   ngOnInit() {
     this.problemType= ProblemType.Addition;
     for(let i=0; i<=9; i++){
-      const problemNumber= this.problemGeneratorService.generate(0,10,0,10, ProblemType.Addition);
+      const problemNumber= this.problemGeneratorService.generate(0,10,0,10, this.problemType);
       this.problemNumbers.push(problemNumber);
 
       if(this.problemNumbers.length >0){
