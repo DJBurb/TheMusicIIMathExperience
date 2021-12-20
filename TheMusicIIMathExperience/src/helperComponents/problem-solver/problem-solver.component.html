@@ -1,0 +1,14 @@
+<problem-display [firstNumber]="firstNumber"  [secondNumber]="secondNumber"
+[showAnswer]="showAnswer" [problemType]="problemType" [answer]="answer">
+
+</problem-display>
+
+<answer-choices [answerChoice1]="possibleAnswer1"
+[answerChoice2]="possibleAnswer2"
+[answerChoice3]="possibleAnswer3"
+[answerChoice4]="possibleAnswer4" (emitChoiceEvent)="checkAnswer($event)">
+
+</answer-choices>
+
+<emotion-card [show]="showPraiseCard" [answerIsCorrect]= "answerIsCorrect">
+</emotion-card>

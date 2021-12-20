@@ -9,18 +9,20 @@
   <div class="inventoryArea">
 
   </div>
-  <problem-display [firstNumber]="currentProblem?.firstNumber"  [secondNumber]="currentProblem?.secondNumber"
-  [showAnswer]="answerIsCorrect? false: true" [problemType]="problemType" [answer]="currentProblem.answer">
+  <problem-solver
+  [firstNumber]="currentProblem?.firstNumber"
+  [secondNumber]="currentProblem?.secondNumber"
+  [showAnswer]="answerIsCorrect? false: true"
+  [problemType]="problemType"
+  [answer]="currentProblem.answer"
+  [possibleAnswer1]="currentProblem?.possibleAnswers[0]"
+  [possibleAnswer2]="currentProblem?.possibleAnswers[1]"
+  [possibleAnswer3]="currentProblem?.possibleAnswers[2]"
+  [possibleAnswer4]="currentProblem?.possibleAnswers[3]"
+  [showPraiseCard]="showPraiseCard"
+  [answerIsCorrect]= "answerIsCorrect"
+  (emitChoiceEvent)="checkAnswer($event)">
 
-  </problem-display>
+  </problem-solver>
 
-  <answer-choices [answerChoice1]="currentProblem?.possibleAnswers[0]"
-  [answerChoice2]="currentProblem?.possibleAnswers[1]"
-  [answerChoice3]="currentProblem?.possibleAnswers[2]"
-  [answerChoice4]="currentProblem?.possibleAnswers[3]" (emitChoiceEvent)="checkAnswer($event)">
-
-  </answer-choices>
-
-  <emotion-card [show]="showPraiseCard" [answerIsCorrect]= "answerIsCorrect">
-  </emotion-card>
 </ion-content>

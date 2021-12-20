@@ -29,4 +29,20 @@ export class HomePage {
 
   }
 
+  startSubtraction(){
+    if (this.platform.is('cordova')) {
+      this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
+      .then(()=>{
+        this.nativeAudio.play('transitionSound').then(()=>{
+          this.navCtrl.navigateForward('/subtraction');
+        });
+
+      });
+    }
+    else{
+      this.navCtrl.navigateForward('/subtraction');
+    }
+
+  }
+
 }

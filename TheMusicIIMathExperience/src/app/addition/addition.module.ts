@@ -10,6 +10,7 @@ import { AdditionPage } from './addition.page';
 import { EmotionCardModule } from '../../helperComponents/emotion-card/emotion-card.module';
 import { AnswerChoicesModule } from '../../helperComponents/answer-choices/answer-choices.module';
 import { ProblemDisplayModule } from '../../helperComponents/problem-display/problem-display.module';
+import { ProblemSolverModule } from '../../helperComponents/problem-solver/problem-solver.module';
 
 @NgModule({
   imports: [
@@ -17,9 +18,10 @@ import { ProblemDisplayModule } from '../../helperComponents/problem-display/pro
     FormsModule,
     IonicModule,
     AdditionPageRoutingModule,
-    EmotionCardModule,
-    AnswerChoicesModule,
-    ProblemDisplayModule
+    ProblemSolverModule
+    // EmotionCardModule,
+    // AnswerChoicesModule,
+    // ProblemDisplayModule
   ],
   declarations: [AdditionPage]
 })

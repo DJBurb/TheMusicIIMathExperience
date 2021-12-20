@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'addition',
     loadChildren: () => import('./addition/addition.module').then( m => m.AdditionPageModule)
   },
+  {
+    path: 'subtraction',
+    loadChildren: () => import('./subtraction/subtraction.module').then( m => m.SubtractionPageModule)
+  },
+  // {
+  //   path: 'subtraction',
+  //   loadChildren: () => import('./subtraction/subtraction.module').then( m => m.SubtractionModule)
+  // },
 ];
 
 @NgModule({
