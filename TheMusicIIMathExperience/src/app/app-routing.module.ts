@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'multiplication',
     loadChildren: () => import('./multiplication/multiplication.module').then( m => m.MultiplicationPageModule)
+  },
+  {
+    path: 'division',
+    loadChildren: () => import('./division/division.module').then( m => m.DivisionPageModule)
   }
 ];
 

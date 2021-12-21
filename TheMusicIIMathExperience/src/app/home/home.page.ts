@@ -45,6 +45,20 @@ export class HomePage {
 
   }
 
+  startDivision(){
+    if (this.platform.is('cordova')) {
+      this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
+      .then(()=>{
+        this.nativeAudio.play('transitionSound').then(()=>{
+          this.navCtrl.navigateForward('/division');
+        });
+
+      });
+    }
+    else{
+      this.navCtrl.navigateForward('/division');
+    }
+  }
 
   startMultiplication(){
     if (this.platform.is('cordova')) {
