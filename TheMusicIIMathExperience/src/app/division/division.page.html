@@ -8,19 +8,7 @@
   <div class="inventoryArea">
 
   </div>
-  <problem-solver
-  [firstNumber]="currentProblem?.firstNumber"
-  [secondNumber]="currentProblem?.secondNumber"
-  [showAnswer]="answerIsCorrect? false: true"
-  [problemType]="problemType"
-  [answer]="currentProblem.answer"
-  [possibleAnswer1]="currentProblem?.possibleAnswers[0]"
-  [possibleAnswer2]="currentProblem?.possibleAnswers[1]"
-  [possibleAnswer3]="currentProblem?.possibleAnswers[2]"
-  [possibleAnswer4]="currentProblem?.possibleAnswers[3]"
-  [showPraiseCard]="showPraiseCard"
-  [answerIsCorrect]= "answerIsCorrect"
-  (emitChoiceEvent)="checkAnswer($event)">
-
+  <problem-solver [problemType]="problemType" [firstNumberMin]=1>
   </problem-solver>
+
 </ion-content>

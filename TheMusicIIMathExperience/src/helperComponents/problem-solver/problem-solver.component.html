@@ -1,12 +1,12 @@
-<problem-display [firstNumber]="firstNumber"  [secondNumber]="secondNumber"
-[showAnswer]="showAnswer" [problemType]="problemType" [answer]="answer">
+<problem-display [firstNumber]="currentProblem.firstNumber"  [secondNumber]="currentProblem.secondNumber"
+[showAnswer]="!answerIsCorrect" [problemType]="problemType" [answer]="currentProblem.answer">
 
 </problem-display>
 
-<answer-choices [answerChoice1]="possibleAnswer1"
-[answerChoice2]="possibleAnswer2"
-[answerChoice3]="possibleAnswer3"
-[answerChoice4]="possibleAnswer4" (emitChoiceEvent)="checkAnswer($event)">
+<answer-choices [answerChoice1]="currentProblem.possibleAnswers[0]"
+[answerChoice2]="currentProblem.possibleAnswers[1]"
+[answerChoice3]="currentProblem.possibleAnswers[2]"
+[answerChoice4]="currentProblem.possibleAnswers[3]" (emitChoiceEvent)="checkAnswer($event)">
 
 </answer-choices>
 
