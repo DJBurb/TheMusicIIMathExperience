@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Problem } from 'src/models/problem';
 import { ProblemType } from '../../enum/problemTypeEnum';
 import { ProblemGeneratorService } from '../../app/problem-generator.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'problem-solver',
@@ -16,6 +17,8 @@ export class ProblemSolverComponent implements OnInit {
   currentProblem: Problem;
   showPraiseCard: boolean;
   currentProblemIndex: number;
+  rightAnswerCount: number;
+  wrongAnswerCount: number;
   @Input() problemType: ProblemType;
   @Input() firstNumberMin: number=0;
   @Input() firstNumberMax: number=10;
@@ -23,7 +26,7 @@ export class ProblemSolverComponent implements OnInit {
   @Input() secondNumberMax: number=10;
 
 
-  constructor(private problemGeneratorService: ProblemGeneratorService) { }
+  constructor(private problemGeneratorService: ProblemGeneratorService, private navCtrl: NavController) { }
 
   ngOnInit() {
     for(let i=0; i<=this.problemGeneratorService.getNumberOfProblemsToSolve()-1; i++){
@@ -48,11 +51,15 @@ export class ProblemSolverComponent implements OnInit {
         this.answerIsCorrect= true;
         this.currentProblemIndex++;
         this.showPraiseCard=true;
+        this.rightAnswerCount++;
         setTimeout(()=>{
           if(this.currentProblemIndex<this.problemNumbers.length){
             this.currentProblem=this.problemNumbers[this.currentProblemIndex];
             this.showPraiseCard=false;
             this.answerIsCorrect=false;
+          }
+          else{
+            this.navCtrl.navigateForward('/my-results');
           }
         }, 2000)
 
@@ -62,10 +69,14 @@ export class ProblemSolverComponent implements OnInit {
         this.answerIsCorrect= false;
         this.currentProblemIndex++;
         this.showPraiseCard=true;
+        this.wrongAnswerCount++;
       setTimeout(()=>{
         if(this.currentProblemIndex<this.problemNumbers.length){
           this.currentProblem=this.problemNumbers[this.currentProblemIndex];
           this.showPraiseCard=false;
+        }
+        else{
+          this.navCtrl.navigateForward('/my-results');
         }
       }, 2000);
     }

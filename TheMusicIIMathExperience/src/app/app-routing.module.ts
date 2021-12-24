@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'division',
     loadChildren: () => import('./division/division.module').then( m => m.DivisionPageModule)
+  },
+  {
+    path: 'my-results',
+    loadChildren: () => import('./my-results/my-results.module').then( m => m.MyResultsPageModule)
   }
 ];
 
