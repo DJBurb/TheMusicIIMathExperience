@@ -13,67 +13,18 @@ export class HomePage {
   constructor(private navCtrl: NavController, private nativeAudio: NativeAudio,
     private platform: Platform) {}
 
-  startAddition(){
+  startWork(pagePath:string){
     if (this.platform.is('cordova')) {
       this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
       .then(()=>{
         this.nativeAudio.play('transitionSound').then(()=>{
-          this.navCtrl.navigateForward('/addition');
+          this.navCtrl.navigateForward('/' + pagePath);
         });
 
       });
     }
     else{
-      this.navCtrl.navigateForward('/addition');
-    }
-
-  }
-
-  startSubtraction(){
-    if (this.platform.is('cordova')) {
-      this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
-      .then(()=>{
-        this.nativeAudio.play('transitionSound').then(()=>{
-          this.navCtrl.navigateForward('/subtraction');
-        });
-
-      });
-    }
-    else{
-      this.navCtrl.navigateForward('/subtraction');
-    }
-
-  }
-
-  startDivision(){
-    if (this.platform.is('cordova')) {
-      this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
-      .then(()=>{
-        this.nativeAudio.play('transitionSound').then(()=>{
-          this.navCtrl.navigateForward('/division');
-        });
-
-      });
-    }
-    else{
-      this.navCtrl.navigateForward('/division');
+      this.navCtrl.navigateForward('/' + pagePath);
     }
   }
-
-  startMultiplication(){
-    if (this.platform.is('cordova')) {
-      this.nativeAudio.preloadSimple('transitionSound', '../../assets/sounds/Chimes-sound-effect.mp3')
-      .then(()=>{
-        this.nativeAudio.play('transitionSound').then(()=>{
-          this.navCtrl.navigateForward('/multiplication');
-        });
-
-      });
-    }
-    else{
-      this.navCtrl.navigateForward('/multiplication');
-    }
-
-  }
-
 }
