@@ -8,6 +8,7 @@ import { DivisionPageRoutingModule } from './division-routing.module';
 
 import { DivisionPage } from './division.page';
 import { ProblemSolverModule } from '../../helperComponents/problem-solver/problem-solver.module';
+import { InventoryAreaModule } from '../../helperComponents/inventory-area/inventory-area.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProblemSolverModule } from '../../helperComponents/problem-solver/probl
     FormsModule,
     IonicModule,
     DivisionPageRoutingModule,
+    InventoryAreaModule,
     ProblemSolverModule
   ],
   declarations: [DivisionPage]

@@ -8,6 +8,7 @@ import { MultiplicationPageRoutingModule } from './multiplication-routing.module
 
 import { MultiplicationPage } from './multiplication.page';
 import { ProblemSolverModule } from '../../helperComponents/problem-solver/problem-solver.module';
+import { InventoryAreaModule } from '../../helperComponents/inventory-area/inventory-area.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProblemSolverModule } from '../../helperComponents/problem-solver/probl
     FormsModule,
     IonicModule,
     MultiplicationPageRoutingModule,
+    InventoryAreaModule,
     ProblemSolverModule
   ],
   declarations: [MultiplicationPage]

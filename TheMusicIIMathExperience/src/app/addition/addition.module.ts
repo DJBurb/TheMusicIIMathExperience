@@ -8,6 +8,7 @@ import { AdditionPageRoutingModule } from './addition-routing.module';
 
 import { AdditionPage } from './addition.page';
 import { ProblemSolverModule } from '../../helperComponents/problem-solver/problem-solver.module';
+import { InventoryAreaModule } from '../../helperComponents/inventory-area/inventory-area.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { ProblemSolverModule } from '../../helperComponents/problem-solver/probl
     FormsModule,
     IonicModule,
     AdditionPageRoutingModule,
+    InventoryAreaModule,
     ProblemSolverModule
   ],
   declarations: [AdditionPage]
