@@ -4,6 +4,7 @@ import { ProblemSolverComponent } from './problem-solver.component';
 import { ProblemDisplayModule } from '../problem-display/problem-display.module';
 import { EmotionCardModule } from '../emotion-card/emotion-card.module';
 import { AnswerChoicesModule } from '../answer-choices/answer-choices.module';
+import { IonicModule } from '@ionic/angular';
 
 
 
@@ -13,7 +14,8 @@ import { AnswerChoicesModule } from '../answer-choices/answer-choices.module';
     CommonModule,
     ProblemDisplayModule,
     EmotionCardModule,
-    AnswerChoicesModule
+    AnswerChoicesModule,
+    IonicModule
   ],
   exports:[ProblemSolverComponent]
 })

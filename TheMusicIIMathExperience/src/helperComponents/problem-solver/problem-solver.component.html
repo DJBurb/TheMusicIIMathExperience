@@ -12,3 +12,26 @@
 
 <emotion-card [show]="showPraiseCard" [answerIsCorrect]= "answerIsCorrect">
 </emotion-card>
+<ion-modal [isOpen]= "openResults" (didDismiss)="returnToMainMenu()">
+  <ng-template>
+    <ion-content>
+      <div class="resultsContainer">
+        <div class="resultsText">
+          Results:
+        </div>
+        <div>
+          {{rightAnswerCount}} out of {{numberOfProblems}} correct
+        </div>
+        <div>
+          Score: {{(rightAnswerCount/numberOfProblems)*100}}%
+        </div>
+        <div>
+          <ion-button (click)="closeModal()">
+            Return To Main Menu
+          </ion-button>
+        </div>
+      </div>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

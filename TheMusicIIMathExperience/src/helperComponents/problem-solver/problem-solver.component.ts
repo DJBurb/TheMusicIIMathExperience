@@ -15,10 +15,12 @@ export class ProblemSolverComponent implements OnInit {
   answerIsCorrect: boolean;
   secondNumber: number;
   currentProblem: Problem;
+  numberOfProblems: number;
   showPraiseCard: boolean;
   currentProblemIndex: number;
-  rightAnswerCount: number;
-  wrongAnswerCount: number;
+  openResults: boolean;
+  rightAnswerCount: number=0;
+  wrongAnswerCount: number=0;
   @Input() problemType: ProblemType;
   @Input() firstNumberMin: number=0;
   @Input() firstNumberMax: number=10;
@@ -29,6 +31,7 @@ export class ProblemSolverComponent implements OnInit {
   constructor(private problemGeneratorService: ProblemGeneratorService, private navCtrl: NavController) { }
 
   ngOnInit() {
+    this.numberOfProblems = this.problemGeneratorService.getNumberOfProblemsToSolve();
     for(let i=0; i<=this.problemGeneratorService.getNumberOfProblemsToSolve()-1; i++){
       const problemNumber= this.problemGeneratorService.generate(
         this.firstNumberMin,
@@ -46,12 +49,21 @@ export class ProblemSolverComponent implements OnInit {
     }
   }
 
+  returnToMainMenu(){
+    this.navCtrl.navigateForward('/home')
+  }
+
+  closeModal(){
+    this.openResults = false;
+
+  }
+
   checkAnswer(chosenAnswer: number){
     if(chosenAnswer === this.currentProblem.answer){
         this.answerIsCorrect= true;
         this.currentProblemIndex++;
         this.showPraiseCard=true;
-        this.rightAnswerCount++;
+        this.rightAnswerCount++;;
         setTimeout(()=>{
           if(this.currentProblemIndex<this.problemNumbers.length){
             this.currentProblem=this.problemNumbers[this.currentProblemIndex];
@@ -59,7 +71,7 @@ export class ProblemSolverComponent implements OnInit {
             this.answerIsCorrect=false;
           }
           else{
-            this.navCtrl.navigateForward('/my-results');
+            this.openResults=true;
           }
         }, 2000)
 
@@ -76,7 +88,7 @@ export class ProblemSolverComponent implements OnInit {
           this.showPraiseCard=false;
         }
         else{
-          this.navCtrl.navigateForward('/my-results');
+          this.openResults=true;
         }
       }, 2000);
     }
