@@ -16,15 +16,18 @@
   <ng-template>
     <ion-content>
       <div class="resultsContainer">
-        <div class="resultsText">
+        <div class="resultsText zoomIn">
           Results:
         </div>
-        <div>
-          {{rightAnswerCount}} out of {{numberOfProblems}} correct
+        <div class="resultInfo">
+          <div class="resultInfoText zoomIn2">
+            {{rightAnswerCount}} out of {{numberOfProblems}} correct
+          </div>
+          <div class="score resultInfoText zoomIn2">
+            Score: {{(rightAnswerCount/numberOfProblems)*100}}%
+          </div>
         </div>
-        <div>
-          Score: {{(rightAnswerCount/numberOfProblems)*100}}%
-        </div>
+
         <div>
           <ion-button (click)="closeModal()">
             Return To Main Menu

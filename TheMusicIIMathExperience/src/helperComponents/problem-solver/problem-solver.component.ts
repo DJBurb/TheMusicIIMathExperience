@@ -9,7 +9,7 @@ import { NavController } from '@ionic/angular';
   templateUrl: './problem-solver.component.html',
   styleUrls: ['./problem-solver.component.scss'],
 })
-export class ProblemSolverComponent implements OnInit {
+export class ProblemSolverComponent implements OnInit{
   problemNumbers: Problem[]=[];
   firstNumber: number;
   answerIsCorrect: boolean;
@@ -50,7 +50,7 @@ export class ProblemSolverComponent implements OnInit {
   }
 
   returnToMainMenu(){
-    this.navCtrl.navigateForward('/home')
+    this.navCtrl.navigateRoot('/home', { animated: true, animationDirection: 'forward' });
   }
 
   closeModal(){
